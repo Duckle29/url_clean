@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        URL Clean
-// @description Clean / minimuze large URLs
+// @description Clean / minimize large URLs by stripping tracking info
 // @license     BSD 3-Clause
 // @author      Duckle29
 // @namespace   https://github.com/Duckle29
@@ -43,4 +43,3 @@
   }
 
 })();
-
