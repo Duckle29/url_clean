@@ -7,8 +7,8 @@
 // @run-at      document-start
 // @icon        https://avatars3.githubusercontent.com/u/2756925?v=3&s=200
 // @homepageURL https://github.com/Duckle29/url_clean
-// @downloadURL https://raw.githubusercontent.com/Duckle29/url_clean/master/url_clean.user.js
-// @updateURL   https://raw.githubusercontent.com/Duckle29/url_clean/master/url_clean.user.js
+// @downloadURL https://github.com/Duckle29/url_clean/raw/main/url_clean.user.js
+// @updateURL   https://github.com/Duckle29/url_clean/raw/main/url_clean.user.js
 // @version     1.1
 //
 // @include     /^https?:\/\/(?:www\.)?([a-zA-Z]{2,3}\.)?aliexpress\.com\/(item|store\/product)\/.*/
