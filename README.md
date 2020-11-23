@@ -4,7 +4,7 @@ Cleans and minimizes urls for prettier sharing in text chats and some tracker st
 The script was initially made by a user in #reprap on freenode IRC for AliExpress, but I sadly have forgotten by who :(
 
 After almost loosing this userscript >10 times, to find it on weird nas drives or old computers,
-I decided to rewrite it entirely from scratch
+I decided to rewrite it entirely from scratch and share it on my github / greasyfork
 
 The script now supports multiple sites, likely to have more added in the future.
 
