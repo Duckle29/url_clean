@@ -37,6 +37,7 @@ Then you can **[install it](https://github.com/Duckle29/url_clean/raw/main/url_c
 
  - AliExpress
  - Ebay
+ - Amazon
 
 ---
 
