@@ -1,12 +1,23 @@
 # URL Clean
-cleans and minimizes urls for prettier copy/paste and some tracker stripping 
+Cleans and minimizes urls for prettier sharing in text chats and some tracker stripping (when shared)
 
 The script was initially made by a user in #reprap on freenode IRC for AliExpress, but I sadly have forgotten by who :(
 
 After almost loosing this userscript >10 times, to find it on weird nas drives or old computers,
-I decided to put it in a place I could find again.
+I decided to rewrite it entirely from scratch
 
-I cleaned up the script, added auto-update support and added more sites.
+The script now supports multiple sites, likely to have more added in the future.
+
+---
+## Example
+The script will take a url like 
+```
+https://www.aliexpress.com/item/32322326979.html?spm=a2g0o.productlist.0.0.5e2e3f351UcucB&algo_pvid=9ac0e00d-f02c-4d7b-8acd-03d1455be4da&algo_expid=9ac0e00d-f02c-4d7b-8acd-03d1455be4da-1&btsid=0bb0623e16061356267071699ec21e&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_
+```
+and clean it to
+```
+https://www.aliexpress.com/item/32322326979.html
+```
 
 ---
 ## Installation
