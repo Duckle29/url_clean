@@ -9,11 +9,12 @@
 // @homepageURL https://github.com/Duckle29/url_clean
 // @downloadURL https://github.com/Duckle29/url_clean/raw/main/url_clean.user.js
 // @updateURL   https://github.com/Duckle29/url_clean/raw/main/url_clean.user.js
-// @version     1.1
+// @version     1.1.1
 //
 // @include     /^https?:\/\/(?:www\.)?([a-zA-Z]{2,3}\.)?aliexpress\.com\/(item|store\/product)\/.*/
 // @include     /^https?:\/\/(?:www\.)?ebay\.(?:co.)?[a-zA-Z]{2,3}\/itm/
-// @include     /^https?:\/\/(?:www\.)?amazon\.(?:co.)?[a-zA-Z]{2,3}\/
+// @include     /^https?:\/\/(?:www\.)?amazon\.(?:co.)?[a-zA-Z]{2,3}\//
+// @history     1.1.1 Fixed regex for Amazon
 // @history     1.1 Added Amazon
 // @history     1.0 Initial release
 // ==/UserScript==
@@ -25,7 +26,7 @@
   [
     /^(https?:\/\/(?:www\.)?ebay\.(?:(?:co.)?[a-zA-Z]{2,3})\/itm)(?:\/[0-9a-zA-Z\-]+)(\/\d+)/,
     /^(https?:\/\/(?:[a-zA-Z]{2,3}\.)?aliexpress.com\/(?:item|store\/product))(\/[0-9_]+[.]html(?=$|[?]))/,
-    /^(https?:\/\/(?:www\.)?amazon\.(?:co.)?[a-zA-Z]{2,3}\/.*\/dp\/)(.*)\//
+    /^(https?:\/\/(?:www\.)?amazon\.(?:co.)?[a-zA-Z]{2,3}\/.*\/dp\/)(.*)(?:\\)?\?/
   ];
 
   sites.forEach(regReplace)
