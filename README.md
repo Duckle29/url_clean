@@ -29,7 +29,9 @@ If you have a userscript plugin like:
   - [Greasemonkey for Firefox](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
   - [Tampermonkey for Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 
-Then you can **[install it](https://github.com/Duckle29/url_clean/raw/main/url_clean.user.js)**  
+Then you can **[install it](https://github.com/Duckle29/url_clean/raw/main/url_clean.user.js)**
+
+or [From greasy fork](https://greasyfork.org/en/scripts/416627-url-clean)
 
 ---
 
