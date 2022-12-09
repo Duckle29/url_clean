@@ -9,11 +9,13 @@
 // @homepageURL https://github.com/Duckle29/url_clean
 // @downloadURL https://github.com/Duckle29/url_clean/raw/main/url_clean.user.js
 // @updateURL   https://github.com/Duckle29/url_clean/raw/main/url_clean.user.js
-// @version     1.1.3
+// @version     1.1.4
 //
+// @include     /^https?:\/\/(?:www\.)?([a-zA-Z]{2,3}\.)?rs-online\.com\/web\/p\/.*/
 // @include     /^https?:\/\/(?:www\.)?([a-zA-Z]{2,3}\.)?aliexpress\.com\/(item|store\/product)\/.*/
 // @include     /^https?:\/\/(?:www\.)?ebay\.(?:co.)?[a-zA-Z]{2,3}\/itm.*/
 // @include     /^https?:\/\/(?:www\.)?amazon\.(?:co.)?[a-zA-Z]{2,3}\/.*/
+// @history     1.1.4 Added RS online
 // @history     1.1.3 Fixed regex replace for ebay
 // @history     1.1.2 Fixed regex to match URL encoding
 // @history     1.1.1 Fixed regex for Amazon
@@ -26,6 +28,7 @@
   'use strict';
   var sites =
   [
+    /^(https?:\/\/(?:www\.)?(?:[a-zA-Z]{2,3}\.)?rs-online\.com\/web\/p\/[^\/]*\/)(\d*)/,
     /^(https?:\/\/(?:www\.)?ebay\.(?:(?:co.)?[a-zA-Z]{2,3})\/itm)(?:\/[0-9a-zA-Z%\-]+)*(\/\d+)/,
     /^(https?:\/\/(?:[a-zA-Z]{2,3}\.)?aliexpress.com\/(?:item|store\/product))(\/[0-9_]+[.]html(?=$|[?]))/,
     /^(https?:\/\/(?:www\.)?amazon\.(?:co.)?[a-zA-Z%]{2,3}\/.*\/dp\/)(.*)(?:\\)?\?/
