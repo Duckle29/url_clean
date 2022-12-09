@@ -47,3 +47,50 @@ or [From greasy fork](https://greasyfork.org/en/scripts/416627-url-clean)
 While it'd be nice to also clean up localization like country specific sub-domains, this can't be
 done in javascript as it represents a CORS attack risk. It coud be done with redirects, and I'll happily 
 look at a PR if anyone is up for that :)
+
+---
+
+## Adding more sites
+Here's the steps to add another site
+
+First, open https://regex101.com and pick javascript flavor. It's a great tool to debug regex :)
+
+Add some regex in the userscript data to let it work on the site in question. I tend to use as specific regex as possible, and not have the script run on pages that it doesn't make sense to.
+
+As an example with aliexpress, we only want to clean urls on product pages, so we restrict it to those urls:
+```
+// @include     /^https?:\/\/(?:www\.)?([a-zA-Z]{2,3}\.)?aliexpress\.com\/(item|store\/product)\/.*/
+```
+Piece by piece:
+https
+with or without `www.`
+with or without a country code `([a-zA-Z]{2,3}\.)?`
+aliexpress.com/ either `item` or `store/product`
+`.*` any thing else
+
+Oh and there's a / / around the regex
+
+Then we add a matching regex with relevant groups in the sites list.
+Here we want to end up with two matching groups. One that matches the main url, and one that matches the relevant stuff to get to the item
+
+for example: 
+
+```
+https://www.aliexpress.com/item/1005003975161015.html?pdp_ext_f=%7B%22ship_from%22:%22CN%22,%22sku_id%22:%2212000029 ...and more
+```
+here we only want everything before the ? which. could be fairly simple regex, but I like complex breakable things so I went for this:
+
+```
+(https?:\/\/(?:[a-zA-Z]{2,3}\.)?aliexpress.com\/(?:item|store\/product))(\/[0-9_]+[.]html(?=$|[?]))
+```
+
+this has two groups which can be hard to see. The `(https?:\/\/(?:[a-zA-Z]{2,3}\.)?aliexpress.com\/(?:item|store\/product))` group and the `(\/[0-9_]+[.]html(?=$|[?]))` group
+
+the resulting url will be group1 + group2
+
+Honestly I can't remember why I did it like this. That seems like pointlessly complicated regex, it even has positive lookahead at the end to look for the url ending or ending in `?`
+
+*shrug*
+
+but that's the idea. Will gladly accept PRs for more sites
+
