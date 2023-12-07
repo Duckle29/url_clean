@@ -9,7 +9,7 @@
 // @homepageURL https://github.com/Duckle29/url_clean
 // @downloadURL https://github.com/Duckle29/url_clean/raw/main/url_clean_redir.user.js
 // @updateURL   https://github.com/Duckle29/url_clean/raw/main/url_clean_redir.user.js
-// @version     1.1.5
+// @version     1.1.6
 //
 // @include     /^https?:\/\/(?:www\.)?([a-zA-Z]{2,3}\.)?rs-online\.com\/web\/p\/.*/
 // @include     /^https?:\/\/(?:www\.)?([a-zA-Z]{1,3}\.)?aliexpress\.(?:(?:co.)?[a-zA-Z]{2,3})\/(item|store\/product)\/.*/
