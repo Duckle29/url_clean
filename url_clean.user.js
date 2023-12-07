@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name        URL Clean without redirect
+// @name        URL Clean with redirect
 // @description Clean / minimize large URLs by stripping tracking info. This version redirect to remove sub domains
 // @license     BSD 3-Clause
 // @author      Duckle29
@@ -12,9 +12,10 @@
 // @version     1.1.5
 //
 // @include     /^https?:\/\/(?:www\.)?([a-zA-Z]{2,3}\.)?rs-online\.com\/web\/p\/.*/
-// @include     /^https?:\/\/(?:www\.)?([a-zA-Z]{1,3}\.)?aliexpress\.com\/(item|store\/product)\/.*/
+// @include     /^https?:\/\/(?:www\.)?([a-zA-Z]{1,3}\.)?aliexpress\.(?:(?:co.)?[a-zA-Z]{2,3})\/(item|store\/product)\/.*/
 // @include     /^https?:\/\/(?:www\.)?ebay\.(?:co.)?[a-zA-Z]{2,3}\/itm.*/
 // @include     /^https?:\/\/(?:www\.)?amazon\.(?:co.)?[a-zA-Z]{2,3}\/.*/
+// @history     1.1.6 Updated regex for aliexpress to work with different TLDs
 // @history     1.1.5 Added redirect version of script
 // @history     1.1.4 Added RS online
 // @history     1.1.3 Fixed regex replace for ebay
@@ -31,10 +32,9 @@
   [
     [/^(https?:\/\/(?:www\.)?(?:[a-zA-Z]{2,3}\.)?rs-online\.com\/web\/p\/[^\/]*\/)(\d*)/, [1, 2]],
     [/^(https?:\/\/(?:www\.)?ebay\.(?:(?:co.)?[a-zA-Z]{2,3})\/itm)(?:\/[0-9a-zA-Z%\-]+)*(\/\d+)/, [1, 2]],
-    [/^(https?:\/\/)(?:[a-zA-Z]{1,3}\.)?(aliexpress.com\/(?:item|store\/product))(\/[0-9_]+[.]html(?=$|[?]))/, [1, 2, 3]],
+    [/^(https?:\/\/)(?:[a-zA-Z]{1,3}\.)?(aliexpress\.(?:(?:co.)?[a-zA-Z]{2,3})\/(?:item|store\/product))(\/[0-9_]+[.]html(?=$|[?]))/, [1, 2, 3]],
     [/^(https?:\/\/(?:www\.)?amazon\.(?:co.)?[a-zA-Z%]{2,3}\/.*\/dp\/)(.*)(?:\\)?\?/, [1, 2]]
   ];
-
 
   for (let i=0; i<sites.length; i++)
   {
@@ -79,7 +79,7 @@
       {
         if (err instanceof DOMException)
         {
-          //window.location.replace(cleaned_url);
+          window.location.replace(cleaned_url);
         }
       }
     }
