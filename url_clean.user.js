@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name        URL Clean without redirect
-// @description Clean / minimize large URLs by stripping tracking info. This version redirect to remove sub domains
+// @description Clean / minimize large URLs by stripping tracking info. This version doesn't redirect to remove sub domains
 // @license     BSD 3-Clause
 // @author      Duckle29
 // @namespace   https://github.com/Duckle29
